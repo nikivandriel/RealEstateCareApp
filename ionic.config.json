@@ -1,0 +1,7 @@
+{
+  "name": "myRealEstateApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
