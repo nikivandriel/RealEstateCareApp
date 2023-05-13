@@ -7,16 +7,11 @@
     </ion-header>
 
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Real Estate Care</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
       <div id="container">
         <HelloWorld msg="Hello World"/>
       </div>
     </ion-content>
+    
     <ion-footer>
       <ion-toolbar class="footer">
         <ion-title class="title">Footer</ion-title>
