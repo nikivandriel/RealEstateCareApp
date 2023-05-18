@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { IonToolbar, IonButton } from '@ionic/vue';
+import { IonToolbar, IonTitle } from '@ionic/vue';
 export default {
     name: 'Navigation',
 }

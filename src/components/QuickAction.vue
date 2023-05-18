@@ -1,7 +1,7 @@
 <template>
     <a 
         class="clickable-card"
-        href="#"
+        :href= action.href
         v-for="(action) in quickActionData.actions"
         :title="action.title"
     >
