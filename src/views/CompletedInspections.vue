@@ -6,7 +6,7 @@
 
         <ion-content :fullscreen="true">
             <div class="ion-padding" id="container">
-                <h3>Afgeronde inspecties</h3>
+                <h3>Uitgevoerde rapportages</h3>
                 <p>Hieronder vind u het overzicht met afgeronde inspecties. Klik op het adres om de gegevens te bekijken of te bewerken</p>
                 <CompletedInspection></CompletedInspection>
             </div>
@@ -27,13 +27,5 @@ import { IonContent, IonHeader, IonPage, IonFooter } from '@ionic/vue';
 </script>
 
 <style>
-ion-icon {
-    padding-inline-end: 1rem;
-}
 
-.header {
-    display: inline-flex;
-    justify-content: space-between;
-    width: 100%;
-}
 </style>
