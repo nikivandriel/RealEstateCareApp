@@ -1,6 +1,6 @@
 <template>
-    <ion-accordion-group v-for="inspection in inspections">
-        <ion-accordion>
+    <ion-accordion-group>
+        <ion-accordion v-for="inspection in inspections">
             <ion-item slot="header" color="light">
                 <ion-icon name="home" src="../src/theme/icons/home.svg"></ion-icon>
                 <ion-label>
