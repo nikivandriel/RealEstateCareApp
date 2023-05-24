@@ -1,12 +1,6 @@
 <template>
-    <a 
-        class="clickable-card"
-        :href= action.href
-        v-for="(action) in quickActionData.actions"
-        :title="action.title"
-    >
-        <ion-card 
-        >
+    <RouterLink class="clickable-card" :to=action.routerLink v-for="(action) in quickActionData.actions">
+        <ion-card>
             <ion-card-header>
                 <ion-card-title class="card-title">{{ action.title }}</ion-card-title>
             </ion-card-header>
@@ -15,7 +9,7 @@
                 <ion-icon :src="getImageUrl(action.svg)"></ion-icon>
             </ion-card-content>
         </ion-card>
-    </a>
+    </RouterLink>
 </template>
   
 <script lang="js">
@@ -31,7 +25,7 @@ export default defineComponent({
     components: { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonIcon },
     props: {
     },
-    setup(){
+    setup() {
         return {
             readerOutline
         }
@@ -46,30 +40,31 @@ export default defineComponent({
 </script>
 
 <style scoped>
-    ion-card {
-        margin-inline: 12px;
-    }
-    ion-icon {
-        font-size: 96px;
-        color: #00a8a0;
-    }
+ion-card {
+    margin-inline: 12px;
+}
+
+ion-icon {
+    font-size: 96px;
+    color: #00a8a0;
+}
+
+.clickable-card {
+    text-decoration: none;
+    width: 200px;
+}
+
+.card-title {
+    font-size: 22px;
+}
+
+@media screen and (max-width: 410px) {
     .clickable-card {
-        text-decoration: none;
-        width: 200px;
-    }
-
-    .card-title {
-        font-size: 22px;
-    }
-
-    @media screen and (max-width: 410px) {
-        .clickable-card {
         width: 180px;
     }
 
     .card-title {
         font-size: 18px;
-    }   
     }
-
+}
 </style>

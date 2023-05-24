@@ -3,22 +3,22 @@ const quickActionData = {
         {
             title: 'Toegewezen rapportages',
             svg: 'reader-outline.svg',
-            href: '#',
+            routerLink: 'scheduledInspections',
         },
         {
             title: 'Uitgevoerde rapportages',
             svg: 'checkmark-outline.svg',
-            href: '../completedInspections',
+            routerLink: 'completedInspections',
         },
         {
             title: 'Kennisbank',
             svg: 'book-outline.svg',
-            href: '#',
+            routerLink: 'documentation',
         },
         {
             title: 'Instellingen',
             svg: 'settings-outline.svg',
-            href: '#',
+            routerLink: 'settings',
         },
 
     ]

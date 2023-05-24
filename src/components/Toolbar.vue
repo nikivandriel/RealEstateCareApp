@@ -1,6 +1,8 @@
 <template>
     <ion-toolbar>
-        <a  slot="start" href="../dashboard"><img src="../theme/images/logo-wit.svg"></a>
+        <RouterLink to="dashboard" slot="start">
+            <img src="../theme/images/logo-wit.svg">
+        </RouterLink>
         <ion-title>Real Estate Care</ion-title>
         <ion-icon slot="end" src="../src/theme/icons/log-out-outline.svg"></ion-icon>
     </ion-toolbar>
