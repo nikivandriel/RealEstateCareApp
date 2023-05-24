@@ -8,27 +8,29 @@
 
     <ion-content :fullscreen="true">
       <div id="container">
-        <HelloWorld msg="Hello World" />
-        <ion-button href="./dashboard">
-          Naar dashboard
-        </ion-button>
+        <Login/>
       </div>
     </ion-content>
 
     <ion-footer>
       <ion-toolbar class="footer">
-        <ion-title class="title">Footer</ion-title>
+        <ion-title class="title"></ion-title>
       </ion-toolbar>
     </ion-footer>
   </ion-page>
 </template>
 
 <script setup>
-import HelloWorld from '../components/HelloWorld.vue';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonFooter } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFooter } from '@ionic/vue';
+import Login from '../components/Login.vue';
 </script>
 
 <style scoped>
+
+ion-content {
+  --background: lightgrey;
+}
+
 #container {
   text-align: center;
 
