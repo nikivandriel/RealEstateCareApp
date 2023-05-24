@@ -1,19 +1,19 @@
 <template>
     <ion-toolbar>
-        <RouterLink to="settings" class="navigation-link" slot="start">
+        <router-link to="settings" class="navigation-link" slot="start">
             <ion-icon src="../src/theme/icons/settings-outline.svg"></ion-icon>
             instellingen
-        </RouterLink>
+        </router-link>
         <ion-title>
-            <RouterLink to="about" class="navigation-link">
+            <router-link to="about" class="navigation-link">
                 <ion-icon src="../src/theme/icons/information-circle-outline.svg"></ion-icon>
                 informatie
-            </RouterLink>
+            </router-link>
         </ion-title>
-        <RouterLink to="#" class="navigation-link" slot="end">
+        <router-link to="#" class="navigation-link" slot="end">
             <ion-icon src="../src/theme/icons/menu-outline.svg"></ion-icon>
             meer
-        </RouterLink>
+        </router-link>
     </ion-toolbar>
 </template>
 

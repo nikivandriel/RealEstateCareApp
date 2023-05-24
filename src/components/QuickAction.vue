@@ -1,5 +1,5 @@
 <template>
-    <RouterLink class="clickable-card" :to=action.routerLink v-for="(action) in quickActionData.actions">
+    <router-link class="clickable-card" :to=action.routerLink v-for="(action) in quickActionData.actions">
         <ion-card>
             <ion-card-header>
                 <ion-card-title class="card-title">{{ action.title }}</ion-card-title>
@@ -9,7 +9,7 @@
                 <ion-icon :src="getImageUrl(action.svg)"></ion-icon>
             </ion-card-content>
         </ion-card>
-    </RouterLink>
+    </router-link>
 </template>
   
 <script lang="js">
