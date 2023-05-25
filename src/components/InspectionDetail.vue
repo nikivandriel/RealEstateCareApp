@@ -7,13 +7,15 @@
             <ion-card-content>
                 <ion-item>
                     <ion-input aria-label="locatie" label="Locatie:" type="text" fill="outline"
-                        placeholder="Waar is de schade aangetroffen?" value=""></ion-input>
+                        placeholder="Waar is de schade aangetroffen?" v-model="inspection.city"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label slot="start">Nieuwe schade:</ion-label>
-                    <ion-radio-group value="">
-                        <ion-radio value="ja">Ja</ion-radio>
-                        <ion-radio value="nee">Nee</ion-radio>
+                    <ion-radio-group>
+                        <!-- <ion-radio v-model:newDamage="this.inspection.surveyOfDamage.newDamage" value="nieuwe schade">Ja</ion-radio>
+                        <ion-radio v-model:newDamage="this.inspection.surveyOfDamage.newDamage" value="betaande schade">Nee</ion-radio>  -->
+                        <ion-radio value="nieuwe schade">Ja</ion-radio>
+                        <ion-radio value="betaande schade">Nee</ion-radio>
                     </ion-radio-group>
                 </ion-item>
                 <ion-item>
@@ -150,16 +152,29 @@
                 </ion-item>
             </ion-card-content>
         </ion-card>
-        <ion-button type="submit">Opslaan</ion-button>
+        <ion-button @click="submit">Opslaan</ion-button>
     </form>
 </template>
 
 <script>
 import { IonCard, IonCardTitle, IonCardContent, IonInput, IonLabel, IonRadioGroup, IonRadio, IonSelect, IonSelectOption, IonDatetime, IonItem, IonButton } from '@ionic/vue';
+import EventService from '../services/EventService';
 
 export default {
     name: 'InspectionDetail',
-    components: { IonCard, IonCardTitle, IonCardContent, IonInput, IonLabel, IonRadioGroup, IonRadio, IonSelect, IonSelectOption, IonDatetime, IonItem, IonButton }
+    components: { IonCard, IonCardTitle, IonCardContent, IonInput, IonLabel, IonRadioGroup, IonRadio, IonSelect, IonSelectOption, IonDatetime, IonItem, IonButton },
+    props: {
+        inspection: {},
+    },
+    methods: {
+        submit(event) {
+            console.log('Ópsal', this.inspection);
+            EventService.postPage(`/inspections/${this.inspection.id}`, { ...this.inspection})
+        }
+    },
+    created() {
+        console.log(this.inspection)
+    }
 }
 </script>
 

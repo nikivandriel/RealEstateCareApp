@@ -31,7 +31,7 @@ const routes = [
     component: ScheduledInspections
   },
   {
-    path: '/activeInspection',
+    path: '/activeInspection/:id',
     name: 'ActiveInspection',
     component: ActiveInspection
   },

@@ -12,5 +12,9 @@ const apiClient = axios.create({
 export default {
     getPage(subURL) {
         return apiClient.get(subURL)
+    },
+    postPage(subURL, obj) {
+        return apiClient.put(subURL, obj)
     }
+
 }

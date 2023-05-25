@@ -1,6 +1,6 @@
 export class SurveyOfDamage {
   location = '';
-  newDamage = false;
+  newDamage = '';
   typeOfDamage = '';
   date;
   requiredAction = true;
