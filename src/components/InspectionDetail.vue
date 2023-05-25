@@ -169,7 +169,7 @@ export default {
     methods: {
         submit(event) {
             console.log('Ópsal', this.inspection);
-            EventService.postPage(`/inspections/${this.inspection.id}`, { ...this.inspection})
+            EventService.putPage(`/inspections/${this.inspection.id}`, { ...this.inspection})
         }
     },
     created() {

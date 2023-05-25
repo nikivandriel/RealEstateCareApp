@@ -13,7 +13,7 @@ export default {
     getPage(subURL) {
         return apiClient.get(subURL)
     },
-    postPage(subURL, obj) {
+    putPage(subURL, obj) {
         return apiClient.put(subURL, obj)
     }
 
