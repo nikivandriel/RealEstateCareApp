@@ -15,7 +15,7 @@
                         <input class="login-input" type="password" required>
                     </ion-item>
                     <ion-item>
-                        <ion-button slot="end" expand="block" size="default" type="submit">Inloggen</ion-button>
+                        <ion-button slot="end" size="default" type="submit">Inloggen</ion-button>
                     </ion-item>
                 </form>
             </ion-card-content>
@@ -24,10 +24,11 @@
 
 <script>
     import '../theme/main.css';
-    import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonButton } from '@ionic/vue';
+    import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonButton } from '@ionic/vue';
 
     export default {
         name: 'Login',
+        components: { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonButton }
     }
 </script>
 
