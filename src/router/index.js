@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 import HomePage from '../views/HomePage.vue';
 import Dashboard from '../views/Dashboard.vue';
 import ScheduledInspections from '../views/ScheduledInspections.vue';
+import ActiveInspection from '../views/ActiveInspection.vue';
 import CompletedInspections from '../views/CompletedInspections.vue';
 import Documentation from '../views/Documentation.vue';
 import Settings from '../views/Settings.vue';
@@ -28,6 +29,11 @@ const routes = [
     path: '/scheduledInspections',
     name: 'ScheduledInspections',
     component: ScheduledInspections
+  },
+  {
+    path: '/activeInspection',
+    name: 'ActiveInspection',
+    component: ActiveInspection
   },
   {
     path: '/completedInspections',

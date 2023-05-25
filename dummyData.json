@@ -6,7 +6,7 @@
         "postalcode": "2242 KR",
         "city": "Wassenaar",
         "date": "2023-05-18",
-        "completed": true,
+        "completed": false,
         "surveyOfDamage": {
             "location": "Gevel",
             "newDamage": "Nieuwe schade",
@@ -44,7 +44,7 @@
         "postalcode": "3512 AL",
         "city": "Utrecht",
         "date": "2022-10-23",
-        "completed": true,
+        "completed": false,
         "surveyOfDamage": {
             "location": "Woonkamer",
             "newDamage": "Bestaande schade",
