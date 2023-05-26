@@ -5,17 +5,20 @@
                 <ion-card-title class="card-title">Inloggen</ion-card-title>
             </ion-card-header>
             <ion-card-content>
+                <ion-item id="error" v-if="error">
+                    <p>Wachtwoord of gebruikersnaam is fout</p>
+                </ion-item>
                 <form>
                     <ion-item>
                         <ion-label>E-mailadres: </ion-label>
-                        <input class="login-input" type="email" required>
+                        <input class="login-input" type="email" id="username" v-model="username" required>
                     </ion-item>
                     <ion-item>
                         <ion-label>Wachtwoord: </ion-label>
-                        <input class="login-input" type="password" required>
+                        <input class="login-input" type="password" id="password" v-model="password" required>
                     </ion-item>
                     <ion-item>
-                        <ion-button slot="end" size="default" type="submit">Inloggen</ion-button>
+                        <ion-button slot="end" size="default" @click="submit">Inloggen</ion-button>
                     </ion-item>
                 </form>
             </ion-card-content>
@@ -28,7 +31,27 @@
 
     export default {
         name: 'Login',
-        components: { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonButton }
+        components: { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonButton },
+        
+        data() {
+            return {
+                error: false,
+            }
+        },
+
+        methods: {
+            submit(){
+
+                if(this.username == 'admin@realestatecare.nl' && this.password == 'Welkom123') {
+                    console.log('hallo', this.username, this.password);
+                    this.$router.push('dashboard');
+                }
+                else {
+                    this.error = true;
+                }
+            }
+
+        }
     }
 </script>
 

@@ -4,7 +4,9 @@
             <img src="../theme/images/logo-wit.svg">
         </router-link>
         <ion-title>Real Estate Care</ion-title>
-        <ion-icon slot="end" src="../src/theme/icons/log-out-outline.svg"></ion-icon>
+        <router-link to="/" slot="end">
+            <ion-icon  src="../src/theme/icons/log-out-outline.svg"></ion-icon>
+        </router-link>
     </ion-toolbar>
 </template>
 
@@ -18,6 +20,7 @@ export default {
 <style scoped>
     ion-icon {
         font-size: 48px;
+        color: white;
     }
     ion-toolbar {
         padding-inline: 1rem;  
