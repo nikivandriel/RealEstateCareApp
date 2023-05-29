@@ -122,7 +122,6 @@
 <script>
 import { IonAccordionGroup, IonAccordion, IonItem, IonIcon, IonLabel, IonList } from '@ionic/vue';
 import { defineComponent } from 'vue';
-// import axios from "axios";
 import EventService from '../services/EventService';
 import { Inspection } from '../models/inspection';
 
