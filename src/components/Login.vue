@@ -1,8 +1,7 @@
 <template>
     <ion-card class="login-card">
-            <img src="../theme/images/logo-tekst1.png">
-            <ion-card-header>
-                <ion-card-title class="card-title">Inloggen</ion-card-title>
+        <img src="../theme/images/logo-tekst1.png">
+        <ion-card-header>
             </ion-card-header>
             <ion-card-content>
                 <ion-item id="error" v-if="error">
@@ -18,7 +17,9 @@
                         <input class="login-input" type="password" id="password" v-model="password" required>
                     </ion-item>
                     <ion-item>
-                        <ion-button slot="end" size="default" @click="submit">Inloggen</ion-button>
+                        <ion-button slot="end" size="default" @click="submit">Inloggen
+                            <ion-icon slot="start" src="../src/theme/icons/log-in-outline.svg"></ion-icon>
+                        </ion-button>
                     </ion-item>
                 </form>
             </ion-card-content>
@@ -27,11 +28,11 @@
 
 <script>
     import '../theme/main.css';
-    import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonButton } from '@ionic/vue';
+    import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonButton, IonIcon } from '@ionic/vue';
 
     export default {
         name: 'Login',
-        components: { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonButton },
+        components: { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonButton, IonIcon },
         
         data() {
             return {
