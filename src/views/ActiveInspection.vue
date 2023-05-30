@@ -10,7 +10,6 @@
                     <h3>Inspectie</h3>
                     <p>inspectie adres: {{ this.inspection.address }}</p>
                     <p>inspectie id: {{ id }}</p>
-                    {{this.inspection.city}}
                 </div>
             </section>
             <InspectionDetail :inspection="inspection"></InspectionDetail>

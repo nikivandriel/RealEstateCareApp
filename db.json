@@ -9,16 +9,16 @@
         "completed": false,
         "surveyOfDamage": {
             "location": "Gevel",
-            "newDamage": "Nieuwe schade",
+            "newDamage": true,
             "typeOfDamage": "Slijtage",
             "date": "2023-05-18",
-            "requiredAction": "Ja",
+            "requiredAction": true,
             "description": "Scheur herstellen in gevel"
           },
         "maintenance": {
             "location": "Keuken",
             "typeOfMaintenance": "Leidingwerk",
-            "requiredAction": "Nee",
+            "requiredAction": false,
             "estimatedCost": "500-1.500"
           },
         "technicalInstallation": {
@@ -26,15 +26,15 @@
             "typeOfInstallation": "Meterkast vervangen",
             "reportedFailures": "Knoppen van meterkast functioneren niet naar behoren",
             "testProcedure": "link naar pdf....",
-            "approved": "Afgekeurd",
+            "approved": false,
             "comments": "Meterkast voldoet niet meer aan de huidige eisen"
           },
         "modification": {
             "existingDocs": "link naar pdf...",
             "location": "Keuken",
             "carriedOutBy": "Huurder",
-            "actionToTake": "Accepteren",
             "description": "Keukenkastjes niet orgineel",
+            "actionToTake": "Accepteren",
             "comments": "Zijn vorige jaar geplaatst"
           }
         },
