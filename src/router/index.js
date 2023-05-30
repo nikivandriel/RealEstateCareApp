@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import HomePage from '../views/HomePage.vue';
+import Authenticate from '../views/Authenticate.vue';
 import Dashboard from '../views/Dashboard.vue';
 import ScheduledInspections from '../views/ScheduledInspections.vue';
 import ActiveInspection from '../views/ActiveInspection.vue';
@@ -19,6 +20,11 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: HomePage
+  },
+  {
+    path: '/authenticate',
+    name: 'Authenticate',
+    component: Authenticate
   },
   {
     path: '/dashboard',

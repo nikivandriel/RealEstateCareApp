@@ -45,7 +45,7 @@
 
                 if(this.username == 'admin@realestatecare.nl' && this.password == 'Welkom123') {
                     console.log('hallo', this.username, this.password);
-                    this.$router.push('dashboard');
+                    this.$router.push('authenticate');
                 }
                 else {
                     this.error = true;

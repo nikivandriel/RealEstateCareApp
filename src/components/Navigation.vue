@@ -10,7 +10,7 @@
                 informatie
             </router-link>
         </ion-title>
-        <router-link to="/#" class="navigation-link" slot="end">
+        <router-link to="#" class="navigation-link" slot="end">
             <ion-icon src="../src/theme/icons/menu-outline.svg"></ion-icon>
             meer
         </router-link>
