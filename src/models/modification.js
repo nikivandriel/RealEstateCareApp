@@ -1,5 +1,4 @@
 export class Modification {
-    existingDocs = '';
     location = '';
     carriedOutBy = '';
     actionToTake = '';
@@ -7,7 +6,6 @@ export class Modification {
     comments = '';
 
     constructor(modification) {
-        this.existingDocs = modification.existingDocs;
         this.location = modification.location;
         this.carriedOutBy = modification.carriedOutBy;
         this.actionToTake = modification.actionToTake;
