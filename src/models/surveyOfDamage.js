@@ -10,7 +10,7 @@ export class SurveyOfDamage {
     this.location = surveyOfDamage.location;
     this.newDamage = surveyOfDamage.newDamage;
     this.typeOfDamage = surveyOfDamage.typeOfDamage;
-    this.date = new Date(surveyOfDamage.date);
+    this.date = surveyOfDamage.date;
     this.requiredAction = surveyOfDamage.requiredAction;
     this.description = surveyOfDamage.description;
   }
