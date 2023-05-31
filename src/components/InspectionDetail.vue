@@ -14,7 +14,7 @@
                     </ion-item>
                     <ion-item lines="none">
                         <ion-toggle aria-label="nieuwe schade:" v-model="inspection.surveyOfDamage.newDamage"
-                            :checked="inspection.surveyOfDamage.newDamage" @ionChange="submit">Nieuwe
+                            :checked="inspection.surveyOfDamage.newDamage" @ionChange="onChange">Nieuwe
                             schade:</ion-toggle>
                     </ion-item>
                     <ion-item lines="none">
@@ -42,7 +42,7 @@
 
                     <ion-item lines="none">
                         <ion-toggle aria-label="accute actie vereist"
-                            v-model="inspection.surveyOfDamage.requiredAction">Acute actie vereist:</ion-toggle>
+                            v-model="inspection.surveyOfDamage.requiredAction" :checked="inspection.surveyOfDamage.newDamage" @ionChange="onChange">Acute actie vereist:</ion-toggle>
                     </ion-item>
                     <ion-item lines="none">
                         <label aria-label="omschrijving van de schade:">Omschrijving van de schade:</label>
@@ -74,15 +74,15 @@
                         </ion-select>
                     </ion-item>
                     <ion-item lines="none">
-                        <ion-toggle aria-label="accute actie vereist" v-model="inspection.maintenance.requiredAction">Accute
+                        <ion-toggle aria-label="accute actie vereist" v-model="inspection.maintenance.requiredAction" :checked="inspection.maintenance.requiredAction" @ionChange="onChange">Accute
                             actie vereist:</ion-toggle>
                     </ion-item>
                     <ion-item>
                         <ion-select aria-label="kosten indicatie" label="Kosten indicatie:" placeholder="Selecteer"
                             v-model="inspection.maintenance.estimatedCost">
                             <ion-select-option value="0-500">0-500</ion-select-option>
-                            <ion-select-option value="500-1500">500-1500</ion-select-option>
-                            <ion-select-option value="1500 +">1500 +</ion-select-option>
+                            <ion-select-option value="500-1.500">500-1500</ion-select-option>
+                            <ion-select-option value="1.500+">1500 +</ion-select-option>
                         </ion-select>
                     </ion-item>
                 </div>
@@ -124,13 +124,13 @@
                     </ion-item>
                     <ion-item lines="none">
                         <ion-toggle aria-label="goedgekeurd"
-                            v-model="inspection.technicalInstallation.approved">Goedgekeurd:</ion-toggle>
+                            v-model="inspection.technicalInstallation.approved" :checked="inspection.technicalInstallation.approved" @ionChange="onChange">Goedgekeurd:</ion-toggle>
                     </ion-item>
                     <ion-item lines="none">
                         <label aria-label="opmerkingen">Opmerkingen:</label>
                         <ion-input class="text-input" type="text" fill="outline"
                             placeholder="Vul hier overige informatie in"
-                            v-model="inspection.technicalInstallation.description"></ion-input>
+                            v-model="inspection.technicalInstallation.comments"></ion-input>
                     </ion-item>
                 </div>
             </ion-accordion>
@@ -188,7 +188,10 @@
             </ion-accordion>
         </ion-accordion-group>
         <ion-item>
-            <ion-button size="default" @click="submit">Opslaan</ion-button>
+            <ion-button size="default" @click="submitNotCompleted">Inspectie niet afronden en opslaan</ion-button>
+        </ion-item>
+        <ion-item>
+            <ion-button size="default" @click="submitCompleted">Inspectie afronden en opslaan</ion-button>
         </ion-item>
     </form>
 </template>
@@ -205,9 +208,14 @@ export default {
     },
     methods: {
 
-        submit(event) {
-            console.log('toggle change')
-            EventService.putPage(`/inspections/${this.inspection.id}`, { ...this.inspection })
+        submitCompleted(event) {
+            console.log('submit');
+            EventService.putPage(`/inspections/${this.inspection.id}`, { ...this.inspection });
+            // set inspection.completed === true;
+        },
+        submitNotCompleted(event) {
+            console.log('submit');
+            EventService.putPage(`/inspections/${this.inspection.id}`, { ...this.inspection });
         },
         onChange(event) {
             console.log('toggle change')
