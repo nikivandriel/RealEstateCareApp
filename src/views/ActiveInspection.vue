@@ -40,13 +40,13 @@ export default {
     created() {
         this.id = +this.$route.params.id;
 
-        EventService.getPage('/inspections')
+        EventService.getPage()
             .then(response => {
                 const data = response.data;
                 console.log(data);
-                const inspection = data.find(inspection => inspection.id === this.id);
-                console.log(inspection);
-                this.inspection = new Inspection(data.find(inspection => inspection.id === this.id))
+                // const inspection = data.record.inspections.find(inspection => inspection.id === this.id);
+                // console.log(inspection);
+                this.inspection = data.record.inspections.find(inspection => inspection.id === this.id);
             }).catch(error => {
                 console.log(error)
         })

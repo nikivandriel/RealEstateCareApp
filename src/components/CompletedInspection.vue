@@ -14,6 +14,8 @@
                         <div>
                             <h3>Datum</h3>
                             <p>{{ new Intl.DateTimeFormat('nl-NL').format(inspection.surveyOfDamage.date) }}</p>
+                            <!-- <p>{{ new Intl.DateTimeFormat('nl-NL').format(new Date(inspection.surveyOfDamage.date)) }}</p> -->
+
                         </div>
                         <div>
                             <h3>Inspectie ID</h3>
@@ -129,10 +131,11 @@ export default defineComponent({
         }
     },
     created() {
-        EventService.getPage('/inspections')
+        EventService.getPage()
             .then(response => {
                 const data = response.data;
-                this.inspections = data.filter(inspection => inspection.completed).map(inspection => new Inspection(inspection))
+                console.log('hoi', response.data);
+                this.inspections = data.record.inspections.filter(inspection => inspection.completed).map(inspection => new Inspection(inspection))
             }).catch(error => {
                 console.log(error)
             })

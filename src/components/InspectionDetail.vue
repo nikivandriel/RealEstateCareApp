@@ -191,7 +191,7 @@
             <ion-button size="default" @click="submitNotCompleted">Inspectie niet afronden en opslaan</ion-button>
         </ion-item>
         <ion-item>
-            <ion-button size="default" @click="submitCompleted">Inspectie afronden en opslaan</ion-button>
+            <ion-button class="button-completed" size="default" @click="submitCompleted">Inspectie afronden en opslaan</ion-button>
         </ion-item>
     </form>
 </template>
@@ -210,12 +210,12 @@ export default {
 
         submitCompleted(event) {
             console.log('submit');
-            EventService.putPage(`/inspections/${this.inspection.id}`, { ...this.inspection });
+            EventService.putPage({ ...this.inspection });
             // set inspection.completed === true;
         },
         submitNotCompleted(event) {
             console.log('submit');
-            EventService.putPage(`/inspections/${this.inspection.id}`, { ...this.inspection });
+            EventService.putPage({ ...this.inspection });
         },
         onChange(event) {
             console.log('toggle change')
@@ -235,7 +235,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 ion-radio-group {
     display: inline-flex;
     justify-content: space-between;
@@ -272,5 +272,9 @@ ion-radio::part(container) {
 .button {
     width: 100%;
     margin-block: 1rem;
+}
+
+.button-completed {
+    --background: var(--ion-color-secondary);
 }
 </style>

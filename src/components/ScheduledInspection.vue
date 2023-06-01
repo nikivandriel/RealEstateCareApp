@@ -63,7 +63,7 @@ export default defineComponent({
         EventService.getPage('/inspections')
             .then(response => {
                 const data = response.data;
-                this.inspections = data.filter(inspection => !inspection.completed).map(inspection => new Inspection(inspection))
+                this.inspections = data.record.inspections.filter(inspection => !inspection.completed).map(inspection => new Inspection(inspection))
             }).catch(error => {
                 console.log(error)
             })
