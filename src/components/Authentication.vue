@@ -1,20 +1,17 @@
 <template>
-    <ion-toast trigger="open-toast" :message= this.randomNumber position="top" :duration="5000"></ion-toast>
+    <ion-toast trigger="open-toast" :message=randomNumber position="top" :duration="5000"></ion-toast>
     <ion-card class="login-card">
         <img src="../theme/images/logo-tekst1.png">
         <ion-card-header>
         </ion-card-header>
         <ion-card-content>
-            <ion-item id="error" v-if="error">
-                <p>Authenticatie code is fout</p>
-            </ion-item>
             <form>
                 <ion-item>
-                    <ion-label>Authenticatie code:</ion-label>
+                    <ion-label>Code:</ion-label>
                     <input class="login-input" type="number" id="authenticate" v-model="authenticate" required>
                 </ion-item>
-                <ion-item>
-                    <ion-button size="default" @click="createRandomNumber" id="open-toast">Verificatiecode
+                <ion-item lines="none">
+                    <ion-button slot="start" size="default" @click="createRandomNumber" id="open-toast">Verificatiecode
                     </ion-button>
                     <ion-button slot="end" size="default" @click="submit">Inloggen
                         <ion-icon slot="start" src="../src/theme/icons/log-in-outline.svg"></ion-icon>
@@ -23,6 +20,9 @@
             </form>
         </ion-card-content>
     </ion-card>
+    <ion-item lines="none" id="error" v-if="error">
+                <p>Verificatiecode is fout!</p>
+            </ion-item>
 </template>
 
 <script>
@@ -35,12 +35,12 @@ export default {
     data() {
         return {
             error: false,
-            randomNumber: '',
+            randomNumber: 0,
         }
     },
     methods: {
         submit() {
-            if (this.authenticate == '123456789') {
+            if (this.authenticate == this.randomNumber) {
                 console.log('hallo', this.authenticate);
                 this.$router.push('dashboard');
             }
@@ -49,14 +49,27 @@ export default {
             }
         },
         createRandomNumber() {
-            const randomNumber = Math.floor(Math.random() * (100000 - 1000000) + 1000000);
-            console.log(randomNumber);
+            this.randomNumber = Math.floor(Math.random() * (100000 - 1000000) + 1000000);
+            console.log(this.randomNumber);
         }
     },
 }
 </script>
 
 <style scoped>
+
+ion-button:first-child {
+    --background: var(--ion-color-secondary);
+}
+
+#error {
+    --background: red;
+    color: white;
+    border-radius: 8px;
+    max-width: 455px;
+    margin-block-start: 2rem;
+    margin-inline: auto;
+}
 .login-input {
     margin-block: 10px;
     border: 1px solid black;
