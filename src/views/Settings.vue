@@ -7,7 +7,7 @@
         <ion-content :fullscreen="true">
             <div class="ion-padding" id="container">
                 <h3>Instellingen</h3>
-                <p>Hier kunt u uw gegevens aanpassen en instellingen beheren.</p>
+                <p>Hier kunt u in de toekomst uw gegevens aanpassen en instellingen beheren. Momenteel werken deze functionaliteiten nog niet, maar de pagina geeft goed weer wat er in de toekomst mogelijk is.</p>
             </div>
             <div class="cards">
                 <ion-card class="settings-card">
@@ -54,12 +54,14 @@
                     </ion-card-content>
                 </ion-card>
             </div>
-            <router-link to="/">
-                <ion-button size="default" @click="submit">Uitloggen
-                    <ion-icon slot="end" src="../src/theme/icons/log-out-outline.svg"></ion-icon>
-                </ion-button>
-            </router-link>
-        </ion-content>
+            <ion-item>
+                <router-link class="button" to="/">
+                    <ion-button size="default">Uitloggen
+                        <ion-icon slot="end" src="../src/theme/icons/log-out-outline.svg"></ion-icon>
+                    </ion-button>
+                </router-link>
+            </ion-item>
+            </ion-content>
 
         <ion-footer>
             <Navigation></Navigation>
@@ -103,5 +105,11 @@ ion-avatar {
 
 .settings-card:first-child {
     margin-block-end: 1rem;
+}
+
+.button {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
 }
 </style>
