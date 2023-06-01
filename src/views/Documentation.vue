@@ -51,7 +51,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
     ion-icon {
         padding-inline-end: 1rem;
     }

@@ -1,12 +1,12 @@
 const quickActionData = {
     actions: [
         {
-            title: 'Toegewezen rapportages',
+            title: 'Toegewezen',
             svg: 'reader-outline.svg',
             routerLink: 'scheduledInspections',
         },
         {
-            title: 'Uitgevoerde rapportages',
+            title: 'Uitgevoerd',
             svg: 'checkmark-outline.svg',
             routerLink: 'completedInspections',
         },

@@ -79,9 +79,6 @@
                                 </ion-label>
                         </ion-item>
                         <ion-item>
-                            <ion-label>Testprocedure:<p><a>Link naar testbestanden</a></p></ion-label>
-                        </ion-item>
-                        <ion-item>
                             <ion-label>Goedgekeurd<p>{{ inspection.technicalInstallation.approved }}</p></ion-label>
                         </ion-item>
                         <ion-item>
@@ -92,10 +89,6 @@
                 <section>
                     <h2>Modificaties inventariseren:</h2>
                     <ion-list>
-                        <ion-item>
-                            <ion-label>Bestaande situatie en reeds gedocumenteerde modificaties: <a>Link naar
-                                    pdf-bestand</a></ion-label>
-                        </ion-item>
                         <ion-item>
                             <ion-label>Locatie aangetroffen modificatie:<p>{{ inspection.modification.location }}</p>
                                 </ion-label>
@@ -114,6 +107,7 @@
                         </ion-item>
                     </ion-list>
                 </section>
+                <router-link :to="'activeInspection/' + inspection.id"><ion-button>Inspectie bewerken</ion-button></router-link>
             </div>
         </ion-accordion>
     </ion-accordion-group>
