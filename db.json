@@ -6,7 +6,7 @@
       "postalcode": "2242 KR",
       "city": "Wassenaar",
       "date": "2023-05-18",
-      "completed": false,
+      "completed": "inspectie niet afgerond",
 
       "surveyOfDamage": {
         "location": "gevel",
@@ -43,7 +43,7 @@
       "postalcode": "3512 AL",
       "city": "Utrecht",
       "date": "2022-10-23",
-      "completed": false,
+      "completed": "inspectie niet afgerond",
 
       "surveyOfDamage": {
         "location": "Woonkamer",
@@ -80,7 +80,7 @@
       "postalcode": "2593 XK",
       "city": "Den Haag",
       "date": "2023-03-01",
-      "completed": true,
+      "completed": "inspectie afgerond",
       "surveyOfDamage": {
         "location": "Woonkamer",
         "newDamage": "nieuwe schade",
@@ -116,7 +116,7 @@
       "postalcode": "2614 VD",
       "city": "Delft",
       "date": "2023-01-22",
-      "completed": true,
+      "completed": "inspectie afgerond",
 
       "surveyOfDamage": {
         "location": "Garage",
@@ -153,7 +153,7 @@
       "postalcode": "2241 KR",
       "city": "Wassenaar",
       "date": "2022-11-11",
-      "completed": true,
+      "completed": "inspectie afgerond",
 
       "surveyOfDamage": {
         "location": "Gang",
@@ -190,7 +190,7 @@
       "postalcode": "2513AV",
       "city": "Wateringen",
       "date": "2023-04-10",
-      "completed": false,
+      "completed": "inspectie niet afgerond",
 
       "surveyOfDamage": {
         "location": "",

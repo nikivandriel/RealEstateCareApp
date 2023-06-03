@@ -2,7 +2,7 @@
     <ion-accordion-group>
         <ion-accordion v-for="inspection in inspections">
             <ion-item slot="header" color="light">
-                <ion-icon name="home" src="../src/theme/icons/home.svg"></ion-icon>
+                <ion-icon name="home" src="../public/icons/home.svg"></ion-icon>
                 <ion-label>
                     <p>{{ inspection.address }}</p>
                     <p>{{ inspection.postalcode }} {{ inspection.city }}</p>
@@ -135,7 +135,7 @@ export default defineComponent({
             .then(response => {
                 const data = response.data;
                 console.log('hoi', response.data);
-                this.inspections = data.record.inspections.filter(inspection => inspection.completed).map(inspection => new Inspection(inspection))
+                this.inspections = data.record.inspections.filter(inspection => inspection.completed === 'inspectie afgerond').map(inspection => new Inspection(inspection))
             }).catch(error => {
                 console.log(error)
             })

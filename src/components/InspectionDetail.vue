@@ -124,7 +124,7 @@
                     <ion-item lines="none">
                         <router-link to="/documentation" class="router-link-button">
                             <ion-button class="button" size="default">
-                                <ion-icon src="../src/theme/icons/document-text-outline.svg" slot="end"></ion-icon>
+                                <ion-icon src="../public/icons/document-text-outline.svg" slot="end"></ion-icon>
                                 Testprocedure
                             </ion-button>
                         </router-link>
@@ -153,7 +153,7 @@
                     <ion-item lines="none">
                         <router-link to="/documentation" class="router-link-button">
                             <ion-button class="button" size="default">
-                                <ion-icon src="../src/theme/icons/document-text-outline.svg" slot="end"></ion-icon>
+                                <ion-icon src="../public/icons/document-text-outline.svg" slot="end"></ion-icon>
                                 Bestaande modificaties
                             </ion-button>
                         </router-link>
@@ -219,9 +219,9 @@ export default {
     },
     methods: {
         submitCompleted(event) {
-            console.log('submit');
+            console.log('submit inspectie afgerond');
             // Zet de inspectie op completed
-            this.inspection.completed === true;
+            this.inspection.completed === "inspectie afgerond";
             // Filter this.inspection uit de collectie met inspections
             const otherInspections = this.inspections.filter(inspection => inspection.id !== this.inspection.id)
             // Maak een nieuwe collectie met daarin de aangepaste inspectie
@@ -232,9 +232,9 @@ export default {
             this.$router.push('/dashboard');
         },
         submitNotCompleted(event) {
-            console.log('submit');
+            console.log('submit inspectie niet afgerond');
             // Zet de inspectie op completed
-            this.inspection.completed === false;
+            this.inspection.completed === "inspectie niet afgerond";
             // Filter this.inspection uit de collectie met inspections
             const otherInspections = this.inspections.filter(inspection => inspection.id !== this.inspection.id)
             // Maak een nieuwe collectie met daarin de aangepaste inspectie
