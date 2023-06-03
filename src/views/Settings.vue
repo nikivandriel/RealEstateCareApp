@@ -57,7 +57,7 @@
             <ion-item>
                 <router-link class="button" to="/">
                     <ion-button size="default">Uitloggen
-                        <ion-icon slot="end" src="../public/icons/log-out-outline.svg"></ion-icon>
+                        <ion-icon slot="end" src="/icons/log-out-outline.svg"></ion-icon>
                     </ion-button>
                 </router-link>
             </ion-item>

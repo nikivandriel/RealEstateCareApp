@@ -2,7 +2,7 @@
     <ion-accordion-group>
         <ion-accordion v-for="inspection in inspections" :key="inspection.id">
             <ion-item slot="header" color="light">
-                <ion-icon name="home" src="../public/icons/home.svg"></ion-icon>
+                <ion-icon name="home" src="/icons/home.svg"></ion-icon>
                 <ion-label>
                     <p>{{ inspection.address }}</p>
                     <p>{{ inspection.postalcode }} {{ inspection.city }}</p>

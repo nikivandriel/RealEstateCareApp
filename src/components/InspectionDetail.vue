@@ -124,7 +124,7 @@
                     <ion-item lines="none">
                         <router-link to="/documentation" class="router-link-button">
                             <ion-button class="button" size="default">
-                                <ion-icon src="../public/icons/document-text-outline.svg" slot="end"></ion-icon>
+                                <ion-icon src="/icons/document-text-outline.svg" slot="end"></ion-icon>
                                 Testprocedure
                             </ion-button>
                         </router-link>
@@ -153,7 +153,7 @@
                     <ion-item lines="none">
                         <router-link to="/documentation" class="router-link-button">
                             <ion-button class="button" size="default">
-                                <ion-icon src="../public/icons/document-text-outline.svg" slot="end"></ion-icon>
+                                <ion-icon src="/icons/document-text-outline.svg" slot="end"></ion-icon>
                                 Bestaande modificaties
                             </ion-button>
                         </router-link>
