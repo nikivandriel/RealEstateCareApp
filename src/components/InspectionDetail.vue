@@ -220,16 +220,16 @@ export default {
 
         submitCompleted(event) {
             console.log('submit');
+            this.inspection.completed === true;
             EventService.putPage({ ...this.inspection });
             // set inspection.completed === true;
-            this.inspection.completed === true;
             this.$router.push('/dashboard');
         },
         submitNotCompleted(event) {
             console.log('submit');
+            this.inspection.completed === false;
             EventService.putPage({ ...this.inspection });
             // set inspection.completed === false;
-            this.inspection.completed === false;
             this.$router.push('/dashboard');
         },
         onChange(event) {
