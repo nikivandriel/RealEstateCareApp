@@ -207,6 +207,7 @@
 </template>
 
 <script>
+import { toRaw } from 'vue';
 import { IonCard, IonCardTitle, IonCardContent, IonInput, IonLabel, IonRadioGroup, IonRadio, IonSelect, IonSelectOption, IonDatetime, IonDatetimeButton, IonModal, IonItem, IonButton } from '@ionic/vue';
 import EventService from '../services/EventService';
 
@@ -220,12 +221,14 @@ export default {
     methods: {
         submitCompleted(event) {
             console.log('submit inspectie afgerond');
+            // Verkrijg het 'rauwe' json inspection object van de Proxy
+            const rawInspection = toRaw(this.inspection);
             // Zet de inspectie op completed
-            this.inspection.completed === "inspectie afgerond";
+            rawInspection.completed = "inspectie afgerond";
             // Filter this.inspection uit de collectie met inspections
-            const otherInspections = this.inspections.filter(inspection => inspection.id !== this.inspection.id)
+            const otherInspections = this.inspections.filter(inspection => inspection.id !== rawInspection.id)
             // Maak een nieuwe collectie met daarin de aangepaste inspectie
-            const inspectionsWithThisInspection = [this.inspection, ...otherInspections];
+            const inspectionsWithThisInspection = [rawInspection, ...otherInspections];
             // Sla de volledige collectie op
             EventService.putPage({ inspections: inspectionsWithThisInspection });
             // Navigeer terug naar dashboard
@@ -233,12 +236,14 @@ export default {
         },
         submitNotCompleted(event) {
             console.log('submit inspectie niet afgerond');
+            // Verkrijg het 'rauwe' json inspection object van de Proxy
+            const rawInspection = toRaw(this.inspection);
             // Zet de inspectie op completed
-            this.inspection.completed === "inspectie niet afgerond";
+            rawInspection.completed = "inspectie niet afgerond";
             // Filter this.inspection uit de collectie met inspections
-            const otherInspections = this.inspections.filter(inspection => inspection.id !== this.inspection.id)
+            const otherInspections = this.inspections.filter(inspection => inspection.id !== rawInspection.id)
             // Maak een nieuwe collectie met daarin de aangepaste inspectie
-            const inspectionsWithThisInspection = [this.inspection, ...otherInspections];
+            const inspectionsWithThisInspection = [rawInspection, ...otherInspections];
             // Sla de volledige collectie op
             EventService.putPage({ inspections: inspectionsWithThisInspection });
             // Navigeer terug naar dashboard

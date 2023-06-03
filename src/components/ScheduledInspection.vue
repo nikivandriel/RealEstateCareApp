@@ -60,6 +60,15 @@ export default defineComponent({
         }
     },
     created() {
+        this.fetchData();
+        
+    },
+    watch: {
+        // call again the method if the route changes
+        '$route': 'fetchData'
+    },
+    methods: {
+    fetchData () {
         EventService.getPage('/inspections')
             .then(response => {
                 const data = response.data;
@@ -67,9 +76,7 @@ export default defineComponent({
             }).catch(error => {
                 console.log(error)
             })
-    },
-    methods: {
-
+    }
     }
 });
 </script>

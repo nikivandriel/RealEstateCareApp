@@ -39,7 +39,7 @@
                             <ion-label>Datum:<p>
 
                                     {{ new Intl.DateTimeFormat('nl-NL').format(inspection.surveyOfDamage.date) }}</p>
-                                </ion-label>
+                            </ion-label>
                         </ion-item>
                         <ion-item>
                             <ion-label>Acute actie vereist:<p>{{ inspection.surveyOfDamage.requiredAction }}</p></ion-label>
@@ -74,11 +74,11 @@
                         </ion-item>
                         <ion-item>
                             <ion-label>Soort installatie:<p>{{ inspection.technicalInstallation.typeOfInstallation }}</p>
-                                </ion-label>
+                            </ion-label>
                         </ion-item>
                         <ion-item>
                             <ion-label>Gemelde storingen:<p>{{ inspection.technicalInstallation.reportedFailures }}</p>
-                                </ion-label>
+                            </ion-label>
                         </ion-item>
                         <ion-item>
                             <ion-label>Goedgekeurd<p>{{ inspection.technicalInstallation.approved }}</p></ion-label>
@@ -93,7 +93,7 @@
                     <ion-list>
                         <ion-item>
                             <ion-label>Locatie aangetroffen modificatie:<p>{{ inspection.modification.location }}</p>
-                                </ion-label>
+                            </ion-label>
                         </ion-item>
                         <ion-item>
                             <ion-label>Uitgevoerd door:<p>{{ inspection.modification.carriedOutBy }}</p></ion-label>
@@ -109,7 +109,8 @@
                         </ion-item>
                     </ion-list>
                 </section>
-                <router-link :to="'activeInspection/' + inspection.id"><ion-button>Inspectie bewerken</ion-button></router-link>
+                <router-link :to="'activeInspection/' + inspection.id"><ion-button>Inspectie
+                        bewerken</ion-button></router-link>
             </div>
         </ion-accordion>
     </ion-accordion-group>
@@ -131,27 +132,37 @@ export default defineComponent({
         }
     },
     created() {
-        EventService.getPage()
-            .then(response => {
-                const data = response.data;
-                console.log('hoi', response.data);
-                this.inspections = data.record.inspections.filter(inspection => inspection.completed === 'inspectie afgerond').map(inspection => new Inspection(inspection))
-            }).catch(error => {
-                console.log(error)
-            })
+        this.fetchData();
+
+    },
+    watch: {
+        // call again the method if the route changes
+        '$route': 'fetchData'
+    },
+    methods: {
+        fetchData() {
+            EventService.getPage('/inspections')
+                .then(response => {
+                    const data = response.data;
+                    console.log('hoi', response.data);
+                    this.inspections = data.record.inspections.filter(inspection => inspection.completed === 'inspectie afgerond').map(inspection => new Inspection(inspection))
+                }).catch(error => {
+                    console.log(error)
+                })
+        }
     }
 });
 </script>
 
 <style scoped>
-    ion-icon {
-        padding-inline-end: 1rem;
-    }
+ion-icon {
+    padding-inline-end: 1rem;
+}
 
-    .header {
-        display: inline-flex;
-        justify-content: space-between;
-        width: 100%;
-    }
+.header {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+}
 </style>
 
