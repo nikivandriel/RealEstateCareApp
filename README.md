@@ -7,9 +7,11 @@ Clone de repository:
     git clone <repository-url>
 
 Installeer packages:
+
     npm install
 
 Starten van de server:
+
     ionic serve
 
 ### Live versie
