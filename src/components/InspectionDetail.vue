@@ -13,9 +13,11 @@
                             v-model="inspection.surveyOfDamage.location"></ion-input>
                     </ion-item>
                     <ion-item lines="none">
-                        <ion-toggle aria-label="nieuwe schade:" v-model="inspection.surveyOfDamage.newDamage"
-                            :checked="inspection.surveyOfDamage.newDamage" @ionChange="onChange">Nieuwe
-                            schade:</ion-toggle>
+                        <ion-label slot="start" aria-label="nieuwe schade:">Nieuwe schade:</ion-label>
+                        <ion-radio-group  v-model="inspection.surveyOfDamage.newDamage">
+                            <ion-radio justify="start" value="nieuwe schade">Ja</ion-radio>
+                            <ion-radio justify="start" value="bestaande schade">Nee</ion-radio>
+                        </ion-radio-group>
                     </ion-item>
                     <ion-item lines="none">
                         <ion-select label="Soort schade:" aria-label="selecteer soort schade" placeholder="selecteer"
@@ -39,10 +41,12 @@
                             </ion-datetime>
                         </ion-modal>
                     </ion-item>
-
                     <ion-item lines="none">
-                        <ion-toggle aria-label="accute actie vereist"
-                            v-model="inspection.surveyOfDamage.requiredAction" :checked="inspection.surveyOfDamage.newDamage" @ionChange="onChange">Acute actie vereist:</ion-toggle>
+                        <ion-label slot="start" aria-label="accute actie vereist:">Accute actie vereist:</ion-label>
+                        <ion-radio-group  v-model="inspection.surveyOfDamage.requiredAction">
+                            <ion-radio justify="start" value="accute actie">Ja</ion-radio>
+                            <ion-radio justify="start" value="geen accute actie">Nee</ion-radio>
+                        </ion-radio-group>
                     </ion-item>
                     <ion-item lines="none">
                         <label aria-label="omschrijving van de schade:">Omschrijving van de schade:</label>
@@ -74,8 +78,11 @@
                         </ion-select>
                     </ion-item>
                     <ion-item lines="none">
-                        <ion-toggle aria-label="accute actie vereist" v-model="inspection.maintenance.requiredAction" :checked="inspection.maintenance.requiredAction" @ionChange="onChange">Accute
-                            actie vereist:</ion-toggle>
+                        <ion-label slot="start" aria-label="accute actie vereist:">Accute actie vereist:</ion-label>
+                        <ion-radio-group  v-model="inspection.maintenance.requiredAction">
+                            <ion-radio justify="start" value="accute actie">Ja</ion-radio>
+                            <ion-radio justify="start" value="geen accute actie">Nee</ion-radio>
+                        </ion-radio-group>
                     </ion-item>
                     <ion-item>
                         <ion-select aria-label="kosten indicatie" label="Kosten indicatie:" placeholder="Selecteer"
@@ -123,8 +130,11 @@
                         </router-link>
                     </ion-item>
                     <ion-item lines="none">
-                        <ion-toggle aria-label="goedgekeurd"
-                            v-model="inspection.technicalInstallation.approved" :checked="inspection.technicalInstallation.approved" @ionChange="onChange">Goedgekeurd:</ion-toggle>
+                        <ion-label slot="start" aria-label="goedgekeurd:">Goedgekeurd:</ion-label>
+                        <ion-radio-group  v-model="inspection.technicalInstallation.approved">
+                            <ion-radio justify="start" value="goedgekeurd ja">Ja</ion-radio>
+                            <ion-radio justify="start" value="goedgekeurd nee">Nee</ion-radio>
+                        </ion-radio-group>
                     </ion-item>
                     <ion-item lines="none">
                         <label aria-label="opmerkingen">Opmerkingen:</label>
@@ -187,10 +197,10 @@
                 </div>
             </ion-accordion>
         </ion-accordion-group>
-        <ion-item>
+        <ion-item lines="none">
             <ion-button size="default" @click="submitNotCompleted">Inspectie niet afronden en opslaan</ion-button>
         </ion-item>
-        <ion-item>
+        <ion-item lines="none">
             <ion-button class="button-completed" size="default" @click="submitCompleted">Inspectie afronden en opslaan</ion-button>
         </ion-item>
     </form>
@@ -212,10 +222,15 @@ export default {
             console.log('submit');
             EventService.putPage({ ...this.inspection });
             // set inspection.completed === true;
+            this.inspection.completed === true;
+            this.$router.push('/dashboard');
         },
         submitNotCompleted(event) {
             console.log('submit');
             EventService.putPage({ ...this.inspection });
+            // set inspection.completed === false;
+            this.inspection.completed === false;
+            this.$router.push('/dashboard');
         },
         onChange(event) {
             console.log('toggle change')
@@ -254,6 +269,10 @@ ion-radio::part(container) {
     height: 20px;
     border: 2px solid #ddd;
     border-radius: 4px;
+}
+ion-button {
+    max-width: 455px;
+    margin-inline: auto;
 }
 
 .input-wrapper {

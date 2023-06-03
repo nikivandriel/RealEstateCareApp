@@ -9,24 +9,24 @@
       "completed": false,
 
       "surveyOfDamage": {
-        "location": "raam",
-        "newDamage": true,
+        "location": "gevel",
+        "newDamage": "nieuwe schade",
         "typeOfDamage": "slijtage",
         "date": "2023-05-18",
-        "requiredAction": true,
+        "requiredAction": "accute actie",
         "description": "Scheur herstellen in gevel"
       },
       "maintenance": {
         "location": "Keuken",
         "typeOfMaintenance": "leidingwerk",
-        "requiredAction": false,
+        "requiredAction": "geen accute actie",
         "estimatedCost": "500-1.500"
       },
       "technicalInstallation": {
         "location": "Meterkast gang",
         "typeOfInstallation": "luchtverversing",
         "reportedFailures": "Aan/uit schakelaar werkt niet",
-        "approved": false,
+        "approved": "goedgekeurd nee",
         "comments": "Luchtverversing voldoet niet meer aan de huidige eisen"
       },
       "modification": {
@@ -47,23 +47,23 @@
 
       "surveyOfDamage": {
         "location": "Woonkamer",
-        "newDamage": false,
+        "newDamage": "bestaande schade",
         "typeOfDamage": "moedwillig",
         "date": "2022-10-23",
-        "requiredAction": false,
+        "requiredAction": "geen accute actie",
         "description": "Vloer moet opnieuw geegaliseerd worden"
       },
       "maintenance": {
         "location": "Tuin",
         "typeOfMaintenance": "houtrot",
-        "requiredAction": true,
+        "requiredAction": "accute actie",
         "estimatedCost": "1.500+"
       },
       "technicalInstallation": {
         "location": "Ventilatie badkamer",
         "typeOfInstallation": "luchtverversing",
         "reportedFailures": "Gaat niet meer open",
-        "approved": true,
+        "approved": "goedgekeurd ja",
         "comments": "Ventilatie vraagt om onderhoud"
       },
       "modification": {
@@ -83,23 +83,23 @@
       "completed": true,
       "surveyOfDamage": {
         "location": "Woonkamer",
-        "newDamage": true,
+        "newDamage": "nieuwe schade",
         "typeOfDamage": "normaal gebruik",
         "date": "2023-03-01",
-        "requiredAction": false,
+        "requiredAction": "geen accute actie",
         "description": "Plinten beschadigd"
       },
       "maintenance": {
         "location": "Slaapkamer",
         "typeOfMaintenance": "beglazing",
-        "requiredAction": true,
+        "requiredAction": "accute actie",
         "estimatedCost": "500-1.500"
       },
       "technicalInstallation": {
         "location": "Kelder",
         "typeOfInstallation": "verwarming",
         "reportedFailures": "Installatie lekt",
-        "approved": false,
+        "approved": "goedgekeurd nee",
         "comments": "Installatie moet vervangen worden"
       },
       "modification": {
@@ -120,23 +120,23 @@
 
       "surveyOfDamage": {
         "location": "Garage",
-        "newDamage": true,
+        "newDamage": "bestaande schade",
         "typeOfDamage": "calamiteit",
         "date": "2023-01-22",
-        "requiredAction": false,
+        "requiredAction": "geen accute actie",
         "description": "Sleutel is afgebroken"
       },
       "maintenance": {
         "location": "Buiten",
         "typeOfMaintenance": "elektra",
-        "requiredAction": true,
+        "requiredAction": "accute actie",
         "estimatedCost": "0-500"
       },
       "technicalInstallation": {
         "location": "Verwarmingsketel zolder",
         "typeOfInstallation": "verwarming",
         "reportedFailures": "Verwarmingsketel heeft deukjes en is bekrast",
-        "approved": true,
+        "approved": "goedgekeurd ja",
         "comments": "Beschadigingen tasten de werking en de veiligheid niet aan"
       },
       "modification": {
@@ -157,23 +157,23 @@
 
       "surveyOfDamage": {
         "location": "Gang",
-        "newDamage": false,
+        "newDamage": "bestaande schade",
         "typeOfDamage": "moedwillig",
         "date": "2022-11-11",
-        "requiredAction": true,
+        "requiredAction": "accute actie",
         "description": "Schimmel op de muur"
       },
       "maintenance": {
         "location": "Hele woning",
         "typeOfMaintenance": "beglazing",
-        "requiredAction": true,
+        "requiredAction": "accute actie",
         "estimatedCost": "1500+"
       },
       "technicalInstallation": {
         "location": "Hal",
         "typeOfInstallation": "beveiliging",
         "reportedFailures": "Sensoren reageren niet meer",
-        "approved": false,
+        "approved": "goedgekeurd nee",
         "comments": "Sensoren moeten vervangen worden"
       },
       "modification": {
@@ -194,23 +194,23 @@
 
       "surveyOfDamage": {
         "location": "",
-        "newDamage": false,
+        "newDamage": "",
         "typeOfDamage": "",
         "date": "2023-04-10",
-        "requiredAction": false,
+        "requiredAction": "",
         "description": ""
       },
       "maintenance": {
         "location": "",
         "typeOfMaintenance": "",
-        "requiredAction": false,
+        "requiredAction": "",
         "estimatedCost": ""
       },
       "technicalInstallation": {
         "location": "",
         "typeOfInstallation": "",
         "reportedFailures": "",
-        "approved": false,
+        "approved": "",
         "comments": ""
       },
       "modification": {
