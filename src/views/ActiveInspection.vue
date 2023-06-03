@@ -12,7 +12,7 @@
                     <p>inspectie id: {{ id }}</p>
                 </div>
             </section>
-            <InspectionDetail :inspection="inspection"></InspectionDetail>
+            <InspectionDetail :inspections="inspections" :inspection="inspection"></InspectionDetail>
         </ion-content>
 
         <ion-footer>
@@ -34,6 +34,7 @@ export default {
     components: { IonContent, IonHeader, IonPage, IonFooter, Toolbar, Navigation, InspectionDetail },
     data() {
         return {
+            inspections: [],
             inspection: {},
         }
     },    
@@ -46,7 +47,8 @@ export default {
                 console.log(data);
                 // const inspection = data.record.inspections.find(inspection => inspection.id === this.id);
                 // console.log(inspection);
-                this.inspection = data.record.inspections.find(inspection => inspection.id === this.id);
+                this.inspections = data.record.inspections;
+                this.inspection = this.inspections.find(inspection => inspection.id === this.id);
             }).catch(error => {
                 console.log(error)
         })

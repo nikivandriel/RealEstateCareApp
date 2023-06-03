@@ -8,8 +8,6 @@ import CompletedInspections from '../views/CompletedInspections.vue';
 import Documentation from '../views/Documentation.vue';
 import Settings from '../views/Settings.vue';
 import About from '../views/About.vue'
-import App2 from '../App2.vue'
-
 
 const routes = [
   {
@@ -60,11 +58,6 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About
-  },
-  {
-    path: '/app2',
-    name: 'App2',
-    component: App2
   }
 ]
 

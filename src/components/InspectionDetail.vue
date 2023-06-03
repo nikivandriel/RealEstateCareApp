@@ -214,37 +214,35 @@ export default {
     name: 'InspectionDetail',
     components: { IonCard, IonCardTitle, IonCardContent, IonInput, IonLabel, IonRadioGroup, IonRadio, IonSelect, IonSelectOption, IonDatetime, IonDatetimeButton, IonModal, IonItem, IonButton },
     props: {
+        inspections: [],
         inspection: {},
     },
     methods: {
-
         submitCompleted(event) {
             console.log('submit');
+            // Zet de inspectie op completed
             this.inspection.completed === true;
-            EventService.putPage({ ...this.inspection });
-            // set inspection.completed === true;
+            // Filter this.inspection uit de collectie met inspections
+            const otherInspections = this.inspections.filter(inspection => inspection.id !== this.inspection.id)
+            // Maak een nieuwe collectie met daarin de aangepaste inspectie
+            const inspectionsWithThisInspection = [this.inspection, ...otherInspections];
+            // Sla de volledige collectie op
+            EventService.putPage({ inspections: inspectionsWithThisInspection });
+            // Navigeer terug naar dashboard
             this.$router.push('/dashboard');
         },
         submitNotCompleted(event) {
             console.log('submit');
+            // Zet de inspectie op completed
             this.inspection.completed === false;
-            EventService.putPage({ ...this.inspection });
-            // set inspection.completed === false;
-            this.$router.push('/dashboard');
-        },
-        onChange(event) {
-            console.log('toggle change')
-        }
-    },
-    created() {
-        console.log(this.inspection)
-    },
-    watch: {
-        'inspection': {
-            deep: true,
-            handler() {
-
-            }
+            // Filter this.inspection uit de collectie met inspections
+            const otherInspections = this.inspections.filter(inspection => inspection.id !== this.inspection.id)
+            // Maak een nieuwe collectie met daarin de aangepaste inspectie
+            const inspectionsWithThisInspection = [this.inspection, ...otherInspections];
+            // Sla de volledige collectie op
+            EventService.putPage({ inspections: inspectionsWithThisInspection });
+            // Navigeer terug naar dashboard
+            this.$router.push('/dashboard');         
         }
     }
 }
@@ -269,10 +267,6 @@ ion-radio::part(container) {
     height: 20px;
     border: 2px solid #ddd;
     border-radius: 4px;
-}
-ion-button {
-    max-width: 455px;
-    margin-inline: auto;
 }
 
 .input-wrapper {

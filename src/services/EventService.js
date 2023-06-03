@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiClient = axios.create({
     // baseURL: 'https://my-json-server.typicode.com/nikivandriel/RealEstateCareApp',
-    // baseURL: 'http://http://localhost:3000',
+    // baseURL: 'http://localhost:3000',
     baseURL: 'https://api.jsonbin.io/v3/b/6479e266b89b1e2299a8c8b8',
 
     withCredentials: false,
