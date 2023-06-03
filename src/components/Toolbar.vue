@@ -5,7 +5,7 @@
         </router-link>
         <ion-title>Real Estate Care</ion-title>
         <router-link to="/" slot="end">
-            <ion-icon  src="../src/theme/icons/log-out-outline.svg"></ion-icon>
+            <ion-icon  src="../public/icons/log-out-outline.svg"></ion-icon>
         </router-link>
     </ion-toolbar>
 </template>

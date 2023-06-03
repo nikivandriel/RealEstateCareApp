@@ -18,7 +18,7 @@
                     </ion-item>
                     <ion-item>
                         <ion-button slot="end" size="default" @click="submit">Inloggen
-                            <ion-icon slot="start" src="../src/theme/icons/log-in-outline.svg"></ion-icon>
+                            <ion-icon slot="start" src="../public/icons/log-in-outline.svg"></ion-icon>
                         </ion-button>
                     </ion-item>
                 </form>
