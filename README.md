@@ -36,10 +36,10 @@ Op het dashboard worden doormiddel van vier tegeltjes de verschillende functiona
 - Kennisbank
 - Instellingen
 
-Via de toegewezen rapportages of de uitgevoerde rapportages komt men door op de knop inspectie invullen of inspectie bewerken op het component activeInspection van een specifiek ID. Hier kan de inspectie worden aangevuld of worden gewijzigd en vervolgens worden opgeslagen als afgronde of niet afgeronde inspectie. 
+Via de toegewezen rapportages of de uitgevoerde rapportages komt men door op de knop inspectie invullen of inspectie bewerken te klikken op het component activeInspection van een specifiek ID. Hier kan de inspectie worden aangevuld of worden gewijzigd en vervolgens worden opgeslagen als afgronde of niet afgeronde inspectie. 
 
 ### Gebruikte technieken
-- Vue.js: Dit framework is gekozen omdat het in de basis heel klein is en gemakkelijk is uit te breiden. 
+- Vue.js: Dit framework is gekozen omdat het in de basis heel klein is en gemakkelijk is uit te breiden. Een uitgebreidere toelichting treft u als pdf bij de inleverdocumenten.  
 - Ionic: Vue.js wordt aangevuld met Ionic webcomponents en zelf gebouwde componenten om tot een gehele applicatie te komen.   
 - Vue-router: Dit router-framework is gebruikt om tussen de schermen van de applicatie te navigeren.
 - jsonbin.io: Is de locatie waar de data staat opgeslagen. Deze kan gelezen en aangepast worden door de applicatie.
@@ -49,11 +49,26 @@ Via de toegewezen rapportages of de uitgevoerde rapportages komt men door op de 
 Om de applicatie veilig te kunnen gebruiken wordt er gebruik gemaakt van een inlogscherm met two-factor authentication. Deze two-factor authentiacttion wordt nu nog gesimuleert maar in de definitieve versie zal er een code worden verzonden naar de telefoon van de gebruiker. Momenteel staan er in de code van de applicatie nog wat gegevens, deze zullen in de toekomst uit de code gehaald moeten worden. 
 
 ### Gebruiksvriendelijkheid
-
-
+- Er is gebruik gemaakt van iconen in combinatie met tekst. Mocht men de applicatie snel willen scannen zijn de iconen wellicht voldoende maar mocht men de iconen niet snappen dan is er tekstuele onderstuening
+- De meeste componenten komen uit de Ionic library en zijn dus consistent ontwikkeld
+- Gebruik gemaakt van 1 lettertype 
+- Als de gebruiker verkeerde inloggegevens gebruikt of een verkeerde verificatiecode invult wordt dit aan de gebruiker duidelijk gemaakt. 
+- Alle pagina's hebben een zelfde indeling
+ 
 ### Toegankelijkheid
+- Binnen het formulier zijn alle invoervelden omrand en hebben de labels allemaal een aria-label. 
+- De pagina's hebben een titel en een introtekst waarin wordt uitgelegd wat men van de pagina kan verwachten.
+- Knoppen hebben een duidelijke kleur die afsteekt tegen de achtergrond. Als er twee knoppen op een pagina voorkomen hebben deze een andere kleur om mensen het verschil te wijzen, naast de tekst die in de knoppen staat.
 
 ### Style guides/ best practices
+- Nette folder structuur
+- Alle componenten zijn consistent geschreven en de namen volgens PascalCase genoemd
+- data geeft altijd een functie terug
+- Inputs hebben labels.
+- Alle afbeeldingen hebben een "alt" tekst mochten deze niet geladen worden of gelezen worden door een screenreader.
+
+### Conclusie
+In een vervolg stadium van dit project zijn er nog wat punten die aandacht vragen. Zo zijn nog niet alle best practices van Vue.js doorgevoerd en kan er zeker ook nog wat gedaan worden aan de gebruiksvriendelijkheid en toegankelijkheid. Zo bestaan bijvoorbeeld niet alle componenten uit meerdere woorden (best practices). Voor de gebruiksvriendelijkheid zou het beter zijn als op de pagina's waar gegevens via een API worden opgehaald een spinner getoond wordt totdat de data is opgehaald. Nu is dit nog niet het geval en kan de gebruiker bij een langzame internetverbinding denken dat de applicatie niet goed werkt. Daarnaast bleek uit de test met een gebruiker dat alleen het logo om terug te komen naar het dashboard niet voldoende is. De gebruiker had graag nog een andere manier gehad om terug te keren naar het dashboard. Dit zou ik de toekomst aangeboden kunnen worden in de footer navigatie. Naast deze punten zal ook de toegankelijkheid nogmaals bekeken moeten worden en kleine verbeteringen worden doorgevoerd.    
 
 
 
