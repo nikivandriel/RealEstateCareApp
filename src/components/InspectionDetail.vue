@@ -272,8 +272,11 @@ ion-radio::part(container) {
     border-radius: 4px;
 }
 
-.input-wrapper {
-    --padding-start: 1rem;
+label {
+    margin-inline-end: 1rem;
+}
+.text-input {
+    --padding-start: 1rem!important;
 }
 
 .accordion-group {
@@ -289,7 +292,6 @@ ion-radio::part(container) {
     width: 100%;
     margin-block: 1rem;
     max-width: 455px;
-    margin: auto;
 }
 
 .button-completed {
