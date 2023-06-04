@@ -290,6 +290,7 @@ label {
 
 .button {
     width: 100%;
+    margin: auto;
     margin-block: 1rem;
     max-width: 455px;
 }
