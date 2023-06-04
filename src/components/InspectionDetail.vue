@@ -290,6 +290,8 @@ ion-radio::part(container) {
 .button {
     width: 100%;
     margin-block: 1rem;
+    max-width: 455px;
+    margin: auto;
 }
 
 .button-completed {

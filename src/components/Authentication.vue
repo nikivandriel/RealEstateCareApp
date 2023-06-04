@@ -1,11 +1,14 @@
 <template>
     <ion-toast trigger="open-toast" :message=randomNumber position="top" :duration="5000"></ion-toast>
     <ion-card class="login-card">
-        <img src="../theme/images/logo-tekst1.png">
+        <img alt="logo van real estate care" src="../theme/images/logo-tekst1.png">
         <ion-card-header>
         </ion-card-header>
         <ion-card-content>
             <form>
+                <ion-item lines="none" id="error" v-if="error">
+                    <p>Verificatiecode is fout!</p>
+                </ion-item>
                 <ion-item>
                     <ion-label>Code:</ion-label>
                     <input class="login-input" type="number" id="authenticate" v-model="authenticate" required>
@@ -20,9 +23,6 @@
             </form>
         </ion-card-content>
     </ion-card>
-    <ion-item lines="none" id="error" v-if="error">
-                <p>Verificatiecode is fout!</p>
-            </ion-item>
 </template>
 
 <script>
@@ -41,7 +41,6 @@ export default {
     methods: {
         submit() {
             if (this.authenticate == this.randomNumber) {
-                console.log('hallo', this.authenticate);
                 this.$router.push('dashboard');
             }
             else {
@@ -50,14 +49,12 @@ export default {
         },
         createRandomNumber() {
             this.randomNumber = Math.floor(Math.random() * (100000 - 1000000) + 1000000);
-            console.log(this.randomNumber);
         }
     },
 }
 </script>
 
 <style scoped>
-
 ion-button:first-child {
     --background: var(--ion-color-secondary);
 }
@@ -65,11 +62,9 @@ ion-button:first-child {
 #error {
     --background: red;
     color: white;
-    border-radius: 8px;
-    max-width: 455px;
-    margin-block-start: 2rem;
-    margin-inline: auto;
+    border-radius: 4px;
 }
+
 .login-input {
     margin-block: 10px;
     border: 1px solid black;

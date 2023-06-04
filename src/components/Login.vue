@@ -44,7 +44,6 @@
             submit(){
 
                 if(this.username == 'admin@realestatecare.nl' && this.password == 'Welkom123') {
-                    console.log('hallo', this.username, this.password);
                     this.$router.push('authenticate');
                 }
                 else {
@@ -66,5 +65,11 @@
         max-width: 455px;
         margin: auto;
         padding-block: 2rem;
+    }
+
+    #error {
+        --background: var(--ion-color-danger);
+        border-radius: 4px;
+        color:var(--ion-color-secondary-contrast);
     }
 </style>
