@@ -27,7 +27,6 @@ import Navigation from '../components/Navigation.vue';
 import { IonContent, IonHeader, IonPage, IonFooter } from '@ionic/vue';
 import InspectionDetail from '../components/InspectionDetail.vue';
 import EventService from '../services/EventService';
-import { Inspection } from '../models/inspection';
 
 export default {
     name: 'activeInspection',
@@ -44,9 +43,6 @@ export default {
         EventService.getPage()
             .then(response => {
                 const data = response.data;
-                console.log(data);
-                // const inspection = data.record.inspections.find(inspection => inspection.id === this.id);
-                // console.log(inspection);
                 this.inspections = data.record.inspections;
                 this.inspection = this.inspections.find(inspection => inspection.id === this.id);
             }).catch(error => {

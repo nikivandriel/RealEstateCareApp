@@ -144,7 +144,6 @@ export default defineComponent({
             EventService.getPage('/inspections')
                 .then(response => {
                     const data = response.data;
-                    console.log('hoi', response.data);
                     this.inspections = data.record.inspections.filter(inspection => inspection.completed === 'inspectie afgerond').map(inspection => new Inspection(inspection))
                 }).catch(error => {
                     console.log(error)

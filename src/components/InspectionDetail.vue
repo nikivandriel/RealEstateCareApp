@@ -220,7 +220,6 @@ export default {
     },
     methods: {
         submitCompleted(event) {
-            console.log('submit inspectie afgerond');
             // Verkrijg het 'rauwe' json inspection object van de Proxy
             const rawInspection = toRaw(this.inspection);
             // Zet de inspectie op completed
@@ -235,7 +234,6 @@ export default {
             this.$router.push('/dashboard');
         },
         submitNotCompleted(event) {
-            console.log('submit inspectie niet afgerond');
             // Verkrijg het 'rauwe' json inspection object van de Proxy
             const rawInspection = toRaw(this.inspection);
             // Zet de inspectie op completed
